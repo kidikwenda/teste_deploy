@@ -84,7 +84,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                deploy automatizado
+                deploy automatizado v1
             </div>
 
         </div>
