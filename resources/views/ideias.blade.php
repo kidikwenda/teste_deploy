@@ -68,26 +68,23 @@
 
 <body>
     <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-            <a href="{{ url('/home') }}">Home</a>
-            @else
-            <a href="{{ route('login') }}">Login</a>
-
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
-            @endif
-            @endauth
-        </div>
-        @endif
 
         <div class="content">
-            <div class="title m-b-md">
-                <p>deploy automatizado v2 ideia</p>
-                <a href="{!! route('ideias') !!}" >ideias</a>
-            </div>
+            <div style="text-align: left;">
+                <p><a href="{!! route('welcome') !!}">
+                        << voltar</a> </p> </div> <div>
+                            {!! Form::open(['route'=> 'ideias.store']) !!}
 
+                            {{ Form::text('description', null, ['class' => 'form-control', 'id' => 'ed-name']) }}
+
+                            {!! Form::close() !!}
+                            <ol style="text-align: left;">
+                                @foreach($ideias as $ideia)
+                                <li>{{ $ideia->description }} <i><a style="text-decoration:none;color: red;" href="{{ route('ideias.delete', $ideia->id) }}">Remover</i>
+                    </a></li>
+                    @endforeach
+                    </ol>
+            </div>
         </div>
     </div>
 </body>

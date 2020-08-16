@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+Route::resource('ideias', 'IdeiasController');
+Route::get('ideias', 'IdeiasController@index')->name('ideias');
+Route::post('ideias/store', 'IdeiasController@store')->name('ideias.store');
+Route::get('ideias/delete/{id}', 'IdeiasController@destroy')->name('ideias.delete');
