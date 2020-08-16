@@ -84,7 +84,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                <p>deploy automatizado</p>
+                <p>Deploy Automatizado</p>
                 <a href="{!! route('ideias') !!}" >ideias</a>
             </div>
 
